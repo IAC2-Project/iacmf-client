@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 README.md
 api.module.ts
 api/api.ts
@@ -133,5 +132,8 @@ model/representationModelObject.ts
 model/triggerEntity.ts
 model/triggerEntityRequestBody.ts
 model/triggerEntityResponse.ts
+ng-package.json
+package.json
 param.ts
+tsconfig.json
 variables.ts
