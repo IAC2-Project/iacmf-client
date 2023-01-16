@@ -13,7 +13,8 @@
   ],
   "license": "Unlicense",
   "scripts": {
-    "build": "ng-packagr -p ng-package.json"
+    "build": "ng-packagr -p ng-package.json",
+	"install": "npm run build"
   },
   "peerDependencies": {
     "@angular/core": "^14.0.5",
