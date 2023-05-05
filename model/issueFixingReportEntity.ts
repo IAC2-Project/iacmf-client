@@ -9,13 +9,11 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { ComplianceIssueEntity } from './complianceIssueEntity';
 
 
 export interface IssueFixingReportEntity { 
     id: number;
     isSuccessful: boolean;
     description?: string;
-    complianceIssue?: ComplianceIssueEntity;
 }
 

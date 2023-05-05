@@ -17,6 +17,5 @@ export interface TriggerEntityRequestBody {
     name: string;
     isDeleted: boolean;
     cronExpression?: string;
-    complianceJobs?: Array<string>;
 }
 

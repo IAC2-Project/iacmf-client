@@ -15,7 +15,6 @@ export interface ComplianceRuleConfigurationEntityRequestBody {
     id: number;
     complianceRuleParameterAssignments?: Array<string>;
     complianceRule?: string;
-    complianceJob?: string;
     issueType: string;
 }
 

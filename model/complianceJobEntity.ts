@@ -14,19 +14,18 @@ import { ComplianceRuleConfigurationEntity } from './complianceRuleConfiguration
 import { ExecutionEntity } from './executionEntity';
 import { ProductionSystemEntity } from './productionSystemEntity';
 import { TriggerEntity } from './triggerEntity';
-import { IssueFixingConfigurationEntity } from './issueFixingConfigurationEntity';
 
 
 export interface ComplianceJobEntity { 
     id: number;
     name: string;
     description?: string;
-    issueFixingConfigurations?: Array<IssueFixingConfigurationEntity>;
     triggers?: Array<TriggerEntity>;
     complianceRuleConfigurations?: Array<ComplianceRuleConfigurationEntity>;
     executions?: Array<ExecutionEntity>;
     modelRefinementStrategy?: Array<PluginUsageEntity>;
     checkingPluginUsage?: PluginUsageEntity;
+    reportingPluginUsage?: PluginUsageEntity;
     productionSystem?: ProductionSystemEntity;
 }
 

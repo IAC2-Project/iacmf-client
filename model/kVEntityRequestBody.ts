@@ -15,7 +15,5 @@ export interface KVEntityRequestBody {
     id: number;
     key: string;
     value?: string;
-    productionSystem?: string;
-    complianceIssue?: string;
 }
 

@@ -15,7 +15,5 @@ export interface PluginConfigurationEntityRequestBody {
     id: number;
     key: string;
     value: string;
-    pluginUsage?: string;
-    pluginUsageInstance?: string;
 }
 

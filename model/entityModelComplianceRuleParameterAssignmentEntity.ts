@@ -16,10 +16,10 @@ export interface EntityModelComplianceRuleParameterAssignmentEntity {
     value?: string;
     name?: string;
     type?: EntityModelComplianceRuleParameterAssignmentEntity.TypeEnum;
-    doubleValue?: number;
     stringListValue?: Array<string>;
-    booleanValue?: boolean;
     integerValue?: number;
+    doubleValue?: number;
+    booleanValue?: boolean;
     _links?: { [key: string]: Link; };
 }
 export namespace EntityModelComplianceRuleParameterAssignmentEntity {

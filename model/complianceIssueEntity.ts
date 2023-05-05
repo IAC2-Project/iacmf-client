@@ -10,14 +10,12 @@
  * Do not edit the class manually.
  */
 import { ComplianceRuleConfigurationEntity } from './complianceRuleConfigurationEntity';
-import { ExecutionEntity } from './executionEntity';
 import { IssueFixingReportEntity } from './issueFixingReportEntity';
 import { KVEntity } from './kVEntity';
 
 
 export interface ComplianceIssueEntity { 
     id: number;
-    execution?: ExecutionEntity;
     complianceRuleConfiguration?: ComplianceRuleConfigurationEntity;
     fixingReports?: Array<IssueFixingReportEntity>;
     properties?: Array<KVEntity>;

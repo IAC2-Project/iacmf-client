@@ -15,10 +15,6 @@ export interface PluginUsageEntityRequestBody {
     pluginIdentifier: string;
     pluginConfiguration?: Array<string>;
     id: number;
-    complianceJobRefinement?: string;
     refinementPluginIndexInComplianceJob?: number;
-    complianceJobChecking?: string;
-    issueFixingConfiguration?: string;
-    productionSystem?: string;
 }
 

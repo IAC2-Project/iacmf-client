@@ -15,10 +15,10 @@ export interface ComplianceRuleParameterAssignmentEntityResponse {
     value?: string;
     name?: string;
     type?: ComplianceRuleParameterAssignmentEntityResponse.TypeEnum;
-    doubleValue?: number;
     stringListValue?: Array<string>;
-    booleanValue?: boolean;
     integerValue?: number;
+    doubleValue?: number;
+    booleanValue?: boolean;
 }
 export namespace ComplianceRuleParameterAssignmentEntityResponse {
     export type TypeEnum = 'INT' | 'DECIMAL' | 'STRING' | 'STRING_LIST' | 'BOOLEAN';

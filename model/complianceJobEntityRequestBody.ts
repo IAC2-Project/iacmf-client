@@ -15,12 +15,12 @@ export interface ComplianceJobEntityRequestBody {
     id: number;
     name: string;
     description?: string;
-    issueFixingConfigurations?: Array<string>;
     triggers?: Array<string>;
     complianceRuleConfigurations?: Array<string>;
     executions?: Array<string>;
     modelRefinementStrategy?: Array<string>;
     checkingPluginUsage?: string;
+    reportingPluginUsage?: string;
     productionSystem?: string;
 }
 

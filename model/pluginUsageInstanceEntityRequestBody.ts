@@ -13,8 +13,7 @@
 
 export interface PluginUsageInstanceEntityRequestBody { 
     pluginIdentifier: string;
+    pluginConfiguration?: Array<string>;
     id: number;
-    pluginUsage?: string;
-    execution?: string;
 }
 

@@ -9,15 +9,11 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { PluginUsageEntity } from './pluginUsageEntity';
-import { PluginUsageInstanceEntity } from './pluginUsageInstanceEntity';
 
 
 export interface PluginConfigurationEntity { 
     id: number;
     key: string;
     value: string;
-    pluginUsage?: PluginUsageEntity;
-    pluginUsageInstance?: PluginUsageInstanceEntity;
 }
 

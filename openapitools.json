@@ -2,6 +2,19 @@
   "$schema": "./node_modules/@openapitools/openapi-generator-cli/config.schema.json",
   "spaces": 2,
   "generator-cli": {
-    "version": "6.2.1"
+    "version": "6.2.1",
+    "generators": {
+      "angular": { 
+        "generatorName": "typescript-angular",
+        "output": "./",
+        "inputSpec": "api-docs.json",
+        "additionalProperties": {
+          "ngVersion": "14.0.5",
+          "disallowAdditionalPropertiesIfNotPresent": "false",
+          "npmName": "iacmf-client"
+
+        }
+      }
+    }
   }
 }

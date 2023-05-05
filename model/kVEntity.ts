@@ -9,15 +9,11 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { ProductionSystemEntity } from './productionSystemEntity';
-import { ComplianceIssueEntity } from './complianceIssueEntity';
 
 
 export interface KVEntity { 
     id: number;
     key: string;
     value?: string;
-    productionSystem?: ProductionSystemEntity;
-    complianceIssue?: ComplianceIssueEntity;
 }
 

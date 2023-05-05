@@ -9,7 +9,6 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { ComplianceJobEntity } from './complianceJobEntity';
 
 
 export interface TriggerEntity { 
@@ -18,6 +17,5 @@ export interface TriggerEntity {
     name: string;
     isDeleted: boolean;
     cronExpression?: string;
-    complianceJobs?: Array<ComplianceJobEntity>;
 }
 

@@ -9,20 +9,13 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { ProductionSystemEntity } from './productionSystemEntity';
 import { PluginConfigurationEntity } from './pluginConfigurationEntity';
-import { IssueFixingConfigurationEntity } from './issueFixingConfigurationEntity';
-import { ComplianceJobEntity } from './complianceJobEntity';
 
 
 export interface PluginUsageEntity { 
     pluginIdentifier: string;
     pluginConfiguration?: Array<PluginConfigurationEntity>;
     id: number;
-    complianceJobRefinement?: ComplianceJobEntity;
     refinementPluginIndexInComplianceJob?: number;
-    complianceJobChecking?: ComplianceJobEntity;
-    issueFixingConfiguration?: IssueFixingConfigurationEntity;
-    productionSystem?: ProductionSystemEntity;
 }
 

@@ -11,14 +11,12 @@
  */
 import { ComplianceRuleEntity } from './complianceRuleEntity';
 import { ComplianceRuleParameterAssignmentEntity } from './complianceRuleParameterAssignmentEntity';
-import { ComplianceJobEntity } from './complianceJobEntity';
 
 
 export interface ComplianceRuleConfigurationEntity { 
     id: number;
     complianceRuleParameterAssignments?: Array<ComplianceRuleParameterAssignmentEntity>;
     complianceRule?: ComplianceRuleEntity;
-    complianceJob?: ComplianceJobEntity;
     issueType: string;
 }
 

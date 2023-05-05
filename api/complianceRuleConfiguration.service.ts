@@ -27,8 +27,6 @@ import { CollectionModelObject } from '../model/collectionModelObject';
 // @ts-ignore
 import { ComplianceRuleConfigurationEntityRequestBody } from '../model/complianceRuleConfigurationEntityRequestBody';
 // @ts-ignore
-import { EntityModelComplianceJobEntity } from '../model/entityModelComplianceJobEntity';
-// @ts-ignore
 import { EntityModelComplianceRuleConfigurationEntity } from '../model/entityModelComplianceRuleConfigurationEntity';
 // @ts-ignore
 import { EntityModelComplianceRuleEntity } from '../model/entityModelComplianceRuleEntity';
@@ -104,95 +102,21 @@ export class ComplianceRuleConfigurationService {
     }
 
     /**
-     * patch-compliancejobentity-by-complianceruleconfigurationentity-Id
-     * @param id 
-     * @param collectionModelObject 
-     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
-     * @param reportProgress flag to report request and response progress.
-     */
-    public createPropertyReferenceComplianceruleconfigurationentityPatch(id: string, collectionModelObject: CollectionModelObject, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/hal+json', context?: HttpContext}): Observable<EntityModelComplianceJobEntity>;
-    public createPropertyReferenceComplianceruleconfigurationentityPatch(id: string, collectionModelObject: CollectionModelObject, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/hal+json', context?: HttpContext}): Observable<HttpResponse<EntityModelComplianceJobEntity>>;
-    public createPropertyReferenceComplianceruleconfigurationentityPatch(id: string, collectionModelObject: CollectionModelObject, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/hal+json', context?: HttpContext}): Observable<HttpEvent<EntityModelComplianceJobEntity>>;
-    public createPropertyReferenceComplianceruleconfigurationentityPatch(id: string, collectionModelObject: CollectionModelObject, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/hal+json', context?: HttpContext}): Observable<any> {
-        if (id === null || id === undefined) {
-            throw new Error('Required parameter id was null or undefined when calling createPropertyReferenceComplianceruleconfigurationentityPatch.');
-        }
-        if (collectionModelObject === null || collectionModelObject === undefined) {
-            throw new Error('Required parameter collectionModelObject was null or undefined when calling createPropertyReferenceComplianceruleconfigurationentityPatch.');
-        }
-
-        let localVarHeaders = this.defaultHeaders;
-
-        let localVarHttpHeaderAcceptSelected: string | undefined = options && options.httpHeaderAccept;
-        if (localVarHttpHeaderAcceptSelected === undefined) {
-            // to determine the Accept header
-            const httpHeaderAccepts: string[] = [
-                'application/hal+json'
-            ];
-            localVarHttpHeaderAcceptSelected = this.configuration.selectHeaderAccept(httpHeaderAccepts);
-        }
-        if (localVarHttpHeaderAcceptSelected !== undefined) {
-            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
-        }
-
-        let localVarHttpContext: HttpContext | undefined = options && options.context;
-        if (localVarHttpContext === undefined) {
-            localVarHttpContext = new HttpContext();
-        }
-
-
-        // to determine the Content-Type header
-        const consumes: string[] = [
-            'application/json',
-            'application/x-spring-data-compact+json',
-            'text/uri-list'
-        ];
-        const httpContentTypeSelected: string | undefined = this.configuration.selectHeaderContentType(consumes);
-        if (httpContentTypeSelected !== undefined) {
-            localVarHeaders = localVarHeaders.set('Content-Type', httpContentTypeSelected);
-        }
-
-        let responseType_: 'text' | 'json' | 'blob' = 'json';
-        if (localVarHttpHeaderAcceptSelected) {
-            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
-                responseType_ = 'text';
-            } else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
-                responseType_ = 'json';
-            } else {
-                responseType_ = 'blob';
-            }
-        }
-
-        let localVarPath = `/compliance-rule-configurations/${this.configuration.encodeParam({name: "id", value: id, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined})}/complianceJob`;
-        return this.httpClient.request<EntityModelComplianceJobEntity>('patch', `${this.configuration.basePath}${localVarPath}`,
-            {
-                context: localVarHttpContext,
-                body: collectionModelObject,
-                responseType: <any>responseType_,
-                withCredentials: this.configuration.withCredentials,
-                headers: localVarHeaders,
-                observe: observe,
-                reportProgress: reportProgress
-            }
-        );
-    }
-
-    /**
      * patch-complianceruleentity-by-complianceruleconfigurationentity-Id
      * @param id 
      * @param collectionModelObject 
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public createPropertyReferenceComplianceruleconfigurationentityPatch1(id: string, collectionModelObject: CollectionModelObject, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/hal+json', context?: HttpContext}): Observable<EntityModelComplianceRuleEntity>;
-    public createPropertyReferenceComplianceruleconfigurationentityPatch1(id: string, collectionModelObject: CollectionModelObject, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/hal+json', context?: HttpContext}): Observable<HttpResponse<EntityModelComplianceRuleEntity>>;
-    public createPropertyReferenceComplianceruleconfigurationentityPatch1(id: string, collectionModelObject: CollectionModelObject, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/hal+json', context?: HttpContext}): Observable<HttpEvent<EntityModelComplianceRuleEntity>>;
-    public createPropertyReferenceComplianceruleconfigurationentityPatch1(id: string, collectionModelObject: CollectionModelObject, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/hal+json', context?: HttpContext}): Observable<any> {
+    public createPropertyReferenceComplianceruleconfigurationentityPatch(id: string, collectionModelObject: CollectionModelObject, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/hal+json', context?: HttpContext}): Observable<EntityModelComplianceRuleEntity>;
+    public createPropertyReferenceComplianceruleconfigurationentityPatch(id: string, collectionModelObject: CollectionModelObject, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/hal+json', context?: HttpContext}): Observable<HttpResponse<EntityModelComplianceRuleEntity>>;
+    public createPropertyReferenceComplianceruleconfigurationentityPatch(id: string, collectionModelObject: CollectionModelObject, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/hal+json', context?: HttpContext}): Observable<HttpEvent<EntityModelComplianceRuleEntity>>;
+    public createPropertyReferenceComplianceruleconfigurationentityPatch(id: string, collectionModelObject: CollectionModelObject, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/hal+json', context?: HttpContext}): Observable<any> {
         if (id === null || id === undefined) {
-            throw new Error('Required parameter id was null or undefined when calling createPropertyReferenceComplianceruleconfigurationentityPatch1.');
+            throw new Error('Required parameter id was null or undefined when calling createPropertyReferenceComplianceruleconfigurationentityPatch.');
         }
         if (collectionModelObject === null || collectionModelObject === undefined) {
-            throw new Error('Required parameter collectionModelObject was null or undefined when calling createPropertyReferenceComplianceruleconfigurationentityPatch1.');
+            throw new Error('Required parameter collectionModelObject was null or undefined when calling createPropertyReferenceComplianceruleconfigurationentityPatch.');
         }
 
         let localVarHeaders = this.defaultHeaders;
@@ -258,15 +182,15 @@ export class ComplianceRuleConfigurationService {
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public createPropertyReferenceComplianceruleconfigurationentityPatch2(id: string, collectionModelObject: CollectionModelObject, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/hal+json', context?: HttpContext}): Observable<CollectionModelComplianceRuleParameterAssignmentEntity>;
-    public createPropertyReferenceComplianceruleconfigurationentityPatch2(id: string, collectionModelObject: CollectionModelObject, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/hal+json', context?: HttpContext}): Observable<HttpResponse<CollectionModelComplianceRuleParameterAssignmentEntity>>;
-    public createPropertyReferenceComplianceruleconfigurationentityPatch2(id: string, collectionModelObject: CollectionModelObject, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/hal+json', context?: HttpContext}): Observable<HttpEvent<CollectionModelComplianceRuleParameterAssignmentEntity>>;
-    public createPropertyReferenceComplianceruleconfigurationentityPatch2(id: string, collectionModelObject: CollectionModelObject, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/hal+json', context?: HttpContext}): Observable<any> {
+    public createPropertyReferenceComplianceruleconfigurationentityPatch1(id: string, collectionModelObject: CollectionModelObject, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/hal+json', context?: HttpContext}): Observable<CollectionModelComplianceRuleParameterAssignmentEntity>;
+    public createPropertyReferenceComplianceruleconfigurationentityPatch1(id: string, collectionModelObject: CollectionModelObject, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/hal+json', context?: HttpContext}): Observable<HttpResponse<CollectionModelComplianceRuleParameterAssignmentEntity>>;
+    public createPropertyReferenceComplianceruleconfigurationentityPatch1(id: string, collectionModelObject: CollectionModelObject, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/hal+json', context?: HttpContext}): Observable<HttpEvent<CollectionModelComplianceRuleParameterAssignmentEntity>>;
+    public createPropertyReferenceComplianceruleconfigurationentityPatch1(id: string, collectionModelObject: CollectionModelObject, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/hal+json', context?: HttpContext}): Observable<any> {
         if (id === null || id === undefined) {
-            throw new Error('Required parameter id was null or undefined when calling createPropertyReferenceComplianceruleconfigurationentityPatch2.');
+            throw new Error('Required parameter id was null or undefined when calling createPropertyReferenceComplianceruleconfigurationentityPatch1.');
         }
         if (collectionModelObject === null || collectionModelObject === undefined) {
-            throw new Error('Required parameter collectionModelObject was null or undefined when calling createPropertyReferenceComplianceruleconfigurationentityPatch2.');
+            throw new Error('Required parameter collectionModelObject was null or undefined when calling createPropertyReferenceComplianceruleconfigurationentityPatch1.');
         }
 
         let localVarHeaders = this.defaultHeaders;
@@ -326,95 +250,21 @@ export class ComplianceRuleConfigurationService {
     }
 
     /**
-     * update-compliancejobentity-by-complianceruleconfigurationentity-Id
-     * @param id 
-     * @param collectionModelObject 
-     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
-     * @param reportProgress flag to report request and response progress.
-     */
-    public createPropertyReferenceComplianceruleconfigurationentityPut(id: string, collectionModelObject: CollectionModelObject, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/hal+json', context?: HttpContext}): Observable<EntityModelComplianceJobEntity>;
-    public createPropertyReferenceComplianceruleconfigurationentityPut(id: string, collectionModelObject: CollectionModelObject, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/hal+json', context?: HttpContext}): Observable<HttpResponse<EntityModelComplianceJobEntity>>;
-    public createPropertyReferenceComplianceruleconfigurationentityPut(id: string, collectionModelObject: CollectionModelObject, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/hal+json', context?: HttpContext}): Observable<HttpEvent<EntityModelComplianceJobEntity>>;
-    public createPropertyReferenceComplianceruleconfigurationentityPut(id: string, collectionModelObject: CollectionModelObject, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/hal+json', context?: HttpContext}): Observable<any> {
-        if (id === null || id === undefined) {
-            throw new Error('Required parameter id was null or undefined when calling createPropertyReferenceComplianceruleconfigurationentityPut.');
-        }
-        if (collectionModelObject === null || collectionModelObject === undefined) {
-            throw new Error('Required parameter collectionModelObject was null or undefined when calling createPropertyReferenceComplianceruleconfigurationentityPut.');
-        }
-
-        let localVarHeaders = this.defaultHeaders;
-
-        let localVarHttpHeaderAcceptSelected: string | undefined = options && options.httpHeaderAccept;
-        if (localVarHttpHeaderAcceptSelected === undefined) {
-            // to determine the Accept header
-            const httpHeaderAccepts: string[] = [
-                'application/hal+json'
-            ];
-            localVarHttpHeaderAcceptSelected = this.configuration.selectHeaderAccept(httpHeaderAccepts);
-        }
-        if (localVarHttpHeaderAcceptSelected !== undefined) {
-            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
-        }
-
-        let localVarHttpContext: HttpContext | undefined = options && options.context;
-        if (localVarHttpContext === undefined) {
-            localVarHttpContext = new HttpContext();
-        }
-
-
-        // to determine the Content-Type header
-        const consumes: string[] = [
-            'application/json',
-            'application/x-spring-data-compact+json',
-            'text/uri-list'
-        ];
-        const httpContentTypeSelected: string | undefined = this.configuration.selectHeaderContentType(consumes);
-        if (httpContentTypeSelected !== undefined) {
-            localVarHeaders = localVarHeaders.set('Content-Type', httpContentTypeSelected);
-        }
-
-        let responseType_: 'text' | 'json' | 'blob' = 'json';
-        if (localVarHttpHeaderAcceptSelected) {
-            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
-                responseType_ = 'text';
-            } else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
-                responseType_ = 'json';
-            } else {
-                responseType_ = 'blob';
-            }
-        }
-
-        let localVarPath = `/compliance-rule-configurations/${this.configuration.encodeParam({name: "id", value: id, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined})}/complianceJob`;
-        return this.httpClient.request<EntityModelComplianceJobEntity>('put', `${this.configuration.basePath}${localVarPath}`,
-            {
-                context: localVarHttpContext,
-                body: collectionModelObject,
-                responseType: <any>responseType_,
-                withCredentials: this.configuration.withCredentials,
-                headers: localVarHeaders,
-                observe: observe,
-                reportProgress: reportProgress
-            }
-        );
-    }
-
-    /**
      * update-complianceruleentity-by-complianceruleconfigurationentity-Id
      * @param id 
      * @param collectionModelObject 
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public createPropertyReferenceComplianceruleconfigurationentityPut1(id: string, collectionModelObject: CollectionModelObject, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/hal+json', context?: HttpContext}): Observable<EntityModelComplianceRuleEntity>;
-    public createPropertyReferenceComplianceruleconfigurationentityPut1(id: string, collectionModelObject: CollectionModelObject, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/hal+json', context?: HttpContext}): Observable<HttpResponse<EntityModelComplianceRuleEntity>>;
-    public createPropertyReferenceComplianceruleconfigurationentityPut1(id: string, collectionModelObject: CollectionModelObject, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/hal+json', context?: HttpContext}): Observable<HttpEvent<EntityModelComplianceRuleEntity>>;
-    public createPropertyReferenceComplianceruleconfigurationentityPut1(id: string, collectionModelObject: CollectionModelObject, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/hal+json', context?: HttpContext}): Observable<any> {
+    public createPropertyReferenceComplianceruleconfigurationentityPut(id: string, collectionModelObject: CollectionModelObject, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/hal+json', context?: HttpContext}): Observable<EntityModelComplianceRuleEntity>;
+    public createPropertyReferenceComplianceruleconfigurationentityPut(id: string, collectionModelObject: CollectionModelObject, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/hal+json', context?: HttpContext}): Observable<HttpResponse<EntityModelComplianceRuleEntity>>;
+    public createPropertyReferenceComplianceruleconfigurationentityPut(id: string, collectionModelObject: CollectionModelObject, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/hal+json', context?: HttpContext}): Observable<HttpEvent<EntityModelComplianceRuleEntity>>;
+    public createPropertyReferenceComplianceruleconfigurationentityPut(id: string, collectionModelObject: CollectionModelObject, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/hal+json', context?: HttpContext}): Observable<any> {
         if (id === null || id === undefined) {
-            throw new Error('Required parameter id was null or undefined when calling createPropertyReferenceComplianceruleconfigurationentityPut1.');
+            throw new Error('Required parameter id was null or undefined when calling createPropertyReferenceComplianceruleconfigurationentityPut.');
         }
         if (collectionModelObject === null || collectionModelObject === undefined) {
-            throw new Error('Required parameter collectionModelObject was null or undefined when calling createPropertyReferenceComplianceruleconfigurationentityPut1.');
+            throw new Error('Required parameter collectionModelObject was null or undefined when calling createPropertyReferenceComplianceruleconfigurationentityPut.');
         }
 
         let localVarHeaders = this.defaultHeaders;
@@ -480,15 +330,15 @@ export class ComplianceRuleConfigurationService {
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public createPropertyReferenceComplianceruleconfigurationentityPut2(id: string, collectionModelObject: CollectionModelObject, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/hal+json', context?: HttpContext}): Observable<CollectionModelComplianceRuleParameterAssignmentEntity>;
-    public createPropertyReferenceComplianceruleconfigurationentityPut2(id: string, collectionModelObject: CollectionModelObject, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/hal+json', context?: HttpContext}): Observable<HttpResponse<CollectionModelComplianceRuleParameterAssignmentEntity>>;
-    public createPropertyReferenceComplianceruleconfigurationentityPut2(id: string, collectionModelObject: CollectionModelObject, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/hal+json', context?: HttpContext}): Observable<HttpEvent<CollectionModelComplianceRuleParameterAssignmentEntity>>;
-    public createPropertyReferenceComplianceruleconfigurationentityPut2(id: string, collectionModelObject: CollectionModelObject, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/hal+json', context?: HttpContext}): Observable<any> {
+    public createPropertyReferenceComplianceruleconfigurationentityPut1(id: string, collectionModelObject: CollectionModelObject, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/hal+json', context?: HttpContext}): Observable<CollectionModelComplianceRuleParameterAssignmentEntity>;
+    public createPropertyReferenceComplianceruleconfigurationentityPut1(id: string, collectionModelObject: CollectionModelObject, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/hal+json', context?: HttpContext}): Observable<HttpResponse<CollectionModelComplianceRuleParameterAssignmentEntity>>;
+    public createPropertyReferenceComplianceruleconfigurationentityPut1(id: string, collectionModelObject: CollectionModelObject, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/hal+json', context?: HttpContext}): Observable<HttpEvent<CollectionModelComplianceRuleParameterAssignmentEntity>>;
+    public createPropertyReferenceComplianceruleconfigurationentityPut1(id: string, collectionModelObject: CollectionModelObject, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/hal+json', context?: HttpContext}): Observable<any> {
         if (id === null || id === undefined) {
-            throw new Error('Required parameter id was null or undefined when calling createPropertyReferenceComplianceruleconfigurationentityPut2.');
+            throw new Error('Required parameter id was null or undefined when calling createPropertyReferenceComplianceruleconfigurationentityPut1.');
         }
         if (collectionModelObject === null || collectionModelObject === undefined) {
-            throw new Error('Required parameter collectionModelObject was null or undefined when calling createPropertyReferenceComplianceruleconfigurationentityPut2.');
+            throw new Error('Required parameter collectionModelObject was null or undefined when calling createPropertyReferenceComplianceruleconfigurationentityPut1.');
         }
 
         let localVarHeaders = this.defaultHeaders;
@@ -605,7 +455,7 @@ export class ComplianceRuleConfigurationService {
     }
 
     /**
-     * delete-compliancejobentity-by-complianceruleconfigurationentity-Id
+     * delete-complianceruleentity-by-complianceruleconfigurationentity-Id
      * @param id 
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
@@ -616,63 +466,6 @@ export class ComplianceRuleConfigurationService {
     public deletePropertyReferenceComplianceruleconfigurationentityDelete(id: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: undefined, context?: HttpContext}): Observable<any> {
         if (id === null || id === undefined) {
             throw new Error('Required parameter id was null or undefined when calling deletePropertyReferenceComplianceruleconfigurationentityDelete.');
-        }
-
-        let localVarHeaders = this.defaultHeaders;
-
-        let localVarHttpHeaderAcceptSelected: string | undefined = options && options.httpHeaderAccept;
-        if (localVarHttpHeaderAcceptSelected === undefined) {
-            // to determine the Accept header
-            const httpHeaderAccepts: string[] = [
-            ];
-            localVarHttpHeaderAcceptSelected = this.configuration.selectHeaderAccept(httpHeaderAccepts);
-        }
-        if (localVarHttpHeaderAcceptSelected !== undefined) {
-            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
-        }
-
-        let localVarHttpContext: HttpContext | undefined = options && options.context;
-        if (localVarHttpContext === undefined) {
-            localVarHttpContext = new HttpContext();
-        }
-
-
-        let responseType_: 'text' | 'json' | 'blob' = 'json';
-        if (localVarHttpHeaderAcceptSelected) {
-            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
-                responseType_ = 'text';
-            } else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
-                responseType_ = 'json';
-            } else {
-                responseType_ = 'blob';
-            }
-        }
-
-        let localVarPath = `/compliance-rule-configurations/${this.configuration.encodeParam({name: "id", value: id, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined})}/complianceJob`;
-        return this.httpClient.request<any>('delete', `${this.configuration.basePath}${localVarPath}`,
-            {
-                context: localVarHttpContext,
-                responseType: <any>responseType_,
-                withCredentials: this.configuration.withCredentials,
-                headers: localVarHeaders,
-                observe: observe,
-                reportProgress: reportProgress
-            }
-        );
-    }
-
-    /**
-     * delete-complianceruleentity-by-complianceruleconfigurationentity-Id
-     * @param id 
-     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
-     * @param reportProgress flag to report request and response progress.
-     */
-    public deletePropertyReferenceComplianceruleconfigurationentityDelete1(id: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: undefined, context?: HttpContext}): Observable<any>;
-    public deletePropertyReferenceComplianceruleconfigurationentityDelete1(id: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: undefined, context?: HttpContext}): Observable<HttpResponse<any>>;
-    public deletePropertyReferenceComplianceruleconfigurationentityDelete1(id: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: undefined, context?: HttpContext}): Observable<HttpEvent<any>>;
-    public deletePropertyReferenceComplianceruleconfigurationentityDelete1(id: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: undefined, context?: HttpContext}): Observable<any> {
-        if (id === null || id === undefined) {
-            throw new Error('Required parameter id was null or undefined when calling deletePropertyReferenceComplianceruleconfigurationentityDelete1.');
         }
 
         let localVarHeaders = this.defaultHeaders;
@@ -724,12 +517,12 @@ export class ComplianceRuleConfigurationService {
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public deletePropertyReferenceComplianceruleconfigurationentityDelete2(id: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: undefined, context?: HttpContext}): Observable<any>;
-    public deletePropertyReferenceComplianceruleconfigurationentityDelete2(id: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: undefined, context?: HttpContext}): Observable<HttpResponse<any>>;
-    public deletePropertyReferenceComplianceruleconfigurationentityDelete2(id: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: undefined, context?: HttpContext}): Observable<HttpEvent<any>>;
-    public deletePropertyReferenceComplianceruleconfigurationentityDelete2(id: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: undefined, context?: HttpContext}): Observable<any> {
+    public deletePropertyReferenceComplianceruleconfigurationentityDelete1(id: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: undefined, context?: HttpContext}): Observable<any>;
+    public deletePropertyReferenceComplianceruleconfigurationentityDelete1(id: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: undefined, context?: HttpContext}): Observable<HttpResponse<any>>;
+    public deletePropertyReferenceComplianceruleconfigurationentityDelete1(id: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: undefined, context?: HttpContext}): Observable<HttpEvent<any>>;
+    public deletePropertyReferenceComplianceruleconfigurationentityDelete1(id: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: undefined, context?: HttpContext}): Observable<any> {
         if (id === null || id === undefined) {
-            throw new Error('Required parameter id was null or undefined when calling deletePropertyReferenceComplianceruleconfigurationentityDelete2.');
+            throw new Error('Required parameter id was null or undefined when calling deletePropertyReferenceComplianceruleconfigurationentityDelete1.');
         }
 
         let localVarHeaders = this.defaultHeaders;
@@ -776,7 +569,7 @@ export class ComplianceRuleConfigurationService {
     }
 
     /**
-     * delete-compliancejobentity-by-complianceruleconfigurationentity-Id
+     * delete-complianceruleentity-by-complianceruleconfigurationentity-Id
      * @param id 
      * @param propertyId 
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
@@ -791,67 +584,6 @@ export class ComplianceRuleConfigurationService {
         }
         if (propertyId === null || propertyId === undefined) {
             throw new Error('Required parameter propertyId was null or undefined when calling deletePropertyReferenceIdComplianceruleconfigurationentityDelete.');
-        }
-
-        let localVarHeaders = this.defaultHeaders;
-
-        let localVarHttpHeaderAcceptSelected: string | undefined = options && options.httpHeaderAccept;
-        if (localVarHttpHeaderAcceptSelected === undefined) {
-            // to determine the Accept header
-            const httpHeaderAccepts: string[] = [
-            ];
-            localVarHttpHeaderAcceptSelected = this.configuration.selectHeaderAccept(httpHeaderAccepts);
-        }
-        if (localVarHttpHeaderAcceptSelected !== undefined) {
-            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
-        }
-
-        let localVarHttpContext: HttpContext | undefined = options && options.context;
-        if (localVarHttpContext === undefined) {
-            localVarHttpContext = new HttpContext();
-        }
-
-
-        let responseType_: 'text' | 'json' | 'blob' = 'json';
-        if (localVarHttpHeaderAcceptSelected) {
-            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
-                responseType_ = 'text';
-            } else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
-                responseType_ = 'json';
-            } else {
-                responseType_ = 'blob';
-            }
-        }
-
-        let localVarPath = `/compliance-rule-configurations/${this.configuration.encodeParam({name: "id", value: id, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined})}/complianceJob/${this.configuration.encodeParam({name: "propertyId", value: propertyId, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined})}`;
-        return this.httpClient.request<any>('delete', `${this.configuration.basePath}${localVarPath}`,
-            {
-                context: localVarHttpContext,
-                responseType: <any>responseType_,
-                withCredentials: this.configuration.withCredentials,
-                headers: localVarHeaders,
-                observe: observe,
-                reportProgress: reportProgress
-            }
-        );
-    }
-
-    /**
-     * delete-complianceruleentity-by-complianceruleconfigurationentity-Id
-     * @param id 
-     * @param propertyId 
-     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
-     * @param reportProgress flag to report request and response progress.
-     */
-    public deletePropertyReferenceIdComplianceruleconfigurationentityDelete1(id: string, propertyId: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: undefined, context?: HttpContext}): Observable<any>;
-    public deletePropertyReferenceIdComplianceruleconfigurationentityDelete1(id: string, propertyId: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: undefined, context?: HttpContext}): Observable<HttpResponse<any>>;
-    public deletePropertyReferenceIdComplianceruleconfigurationentityDelete1(id: string, propertyId: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: undefined, context?: HttpContext}): Observable<HttpEvent<any>>;
-    public deletePropertyReferenceIdComplianceruleconfigurationentityDelete1(id: string, propertyId: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: undefined, context?: HttpContext}): Observable<any> {
-        if (id === null || id === undefined) {
-            throw new Error('Required parameter id was null or undefined when calling deletePropertyReferenceIdComplianceruleconfigurationentityDelete1.');
-        }
-        if (propertyId === null || propertyId === undefined) {
-            throw new Error('Required parameter propertyId was null or undefined when calling deletePropertyReferenceIdComplianceruleconfigurationentityDelete1.');
         }
 
         let localVarHeaders = this.defaultHeaders;
@@ -904,15 +636,15 @@ export class ComplianceRuleConfigurationService {
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public deletePropertyReferenceIdComplianceruleconfigurationentityDelete2(id: string, propertyId: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: undefined, context?: HttpContext}): Observable<any>;
-    public deletePropertyReferenceIdComplianceruleconfigurationentityDelete2(id: string, propertyId: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: undefined, context?: HttpContext}): Observable<HttpResponse<any>>;
-    public deletePropertyReferenceIdComplianceruleconfigurationentityDelete2(id: string, propertyId: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: undefined, context?: HttpContext}): Observable<HttpEvent<any>>;
-    public deletePropertyReferenceIdComplianceruleconfigurationentityDelete2(id: string, propertyId: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: undefined, context?: HttpContext}): Observable<any> {
+    public deletePropertyReferenceIdComplianceruleconfigurationentityDelete1(id: string, propertyId: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: undefined, context?: HttpContext}): Observable<any>;
+    public deletePropertyReferenceIdComplianceruleconfigurationentityDelete1(id: string, propertyId: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: undefined, context?: HttpContext}): Observable<HttpResponse<any>>;
+    public deletePropertyReferenceIdComplianceruleconfigurationentityDelete1(id: string, propertyId: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: undefined, context?: HttpContext}): Observable<HttpEvent<any>>;
+    public deletePropertyReferenceIdComplianceruleconfigurationentityDelete1(id: string, propertyId: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: undefined, context?: HttpContext}): Observable<any> {
         if (id === null || id === undefined) {
-            throw new Error('Required parameter id was null or undefined when calling deletePropertyReferenceIdComplianceruleconfigurationentityDelete2.');
+            throw new Error('Required parameter id was null or undefined when calling deletePropertyReferenceIdComplianceruleconfigurationentityDelete1.');
         }
         if (propertyId === null || propertyId === undefined) {
-            throw new Error('Required parameter propertyId was null or undefined when calling deletePropertyReferenceIdComplianceruleconfigurationentityDelete2.');
+            throw new Error('Required parameter propertyId was null or undefined when calling deletePropertyReferenceIdComplianceruleconfigurationentityDelete1.');
         }
 
         let localVarHeaders = this.defaultHeaders;
@@ -959,142 +691,21 @@ export class ComplianceRuleConfigurationService {
     }
 
     /**
-     * get-compliancejobentity-by-complianceruleconfigurationentity-Id
-     * @param id 
-     * @param propertyId 
-     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
-     * @param reportProgress flag to report request and response progress.
-     */
-    public followPropertyReferenceComplianceruleconfigurationentityGet(id: string, propertyId: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/hal+json', context?: HttpContext}): Observable<EntityModelComplianceJobEntity>;
-    public followPropertyReferenceComplianceruleconfigurationentityGet(id: string, propertyId: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/hal+json', context?: HttpContext}): Observable<HttpResponse<EntityModelComplianceJobEntity>>;
-    public followPropertyReferenceComplianceruleconfigurationentityGet(id: string, propertyId: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/hal+json', context?: HttpContext}): Observable<HttpEvent<EntityModelComplianceJobEntity>>;
-    public followPropertyReferenceComplianceruleconfigurationentityGet(id: string, propertyId: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/hal+json', context?: HttpContext}): Observable<any> {
-        if (id === null || id === undefined) {
-            throw new Error('Required parameter id was null or undefined when calling followPropertyReferenceComplianceruleconfigurationentityGet.');
-        }
-        if (propertyId === null || propertyId === undefined) {
-            throw new Error('Required parameter propertyId was null or undefined when calling followPropertyReferenceComplianceruleconfigurationentityGet.');
-        }
-
-        let localVarHeaders = this.defaultHeaders;
-
-        let localVarHttpHeaderAcceptSelected: string | undefined = options && options.httpHeaderAccept;
-        if (localVarHttpHeaderAcceptSelected === undefined) {
-            // to determine the Accept header
-            const httpHeaderAccepts: string[] = [
-                'application/hal+json'
-            ];
-            localVarHttpHeaderAcceptSelected = this.configuration.selectHeaderAccept(httpHeaderAccepts);
-        }
-        if (localVarHttpHeaderAcceptSelected !== undefined) {
-            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
-        }
-
-        let localVarHttpContext: HttpContext | undefined = options && options.context;
-        if (localVarHttpContext === undefined) {
-            localVarHttpContext = new HttpContext();
-        }
-
-
-        let responseType_: 'text' | 'json' | 'blob' = 'json';
-        if (localVarHttpHeaderAcceptSelected) {
-            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
-                responseType_ = 'text';
-            } else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
-                responseType_ = 'json';
-            } else {
-                responseType_ = 'blob';
-            }
-        }
-
-        let localVarPath = `/compliance-rule-configurations/${this.configuration.encodeParam({name: "id", value: id, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined})}/complianceJob/${this.configuration.encodeParam({name: "propertyId", value: propertyId, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined})}`;
-        return this.httpClient.request<EntityModelComplianceJobEntity>('get', `${this.configuration.basePath}${localVarPath}`,
-            {
-                context: localVarHttpContext,
-                responseType: <any>responseType_,
-                withCredentials: this.configuration.withCredentials,
-                headers: localVarHeaders,
-                observe: observe,
-                reportProgress: reportProgress
-            }
-        );
-    }
-
-    /**
-     * get-compliancejobentity-by-complianceruleconfigurationentity-Id
-     * @param id 
-     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
-     * @param reportProgress flag to report request and response progress.
-     */
-    public followPropertyReferenceComplianceruleconfigurationentityGet1(id: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/hal+json' | 'text/uri-list', context?: HttpContext}): Observable<EntityModelComplianceJobEntity>;
-    public followPropertyReferenceComplianceruleconfigurationentityGet1(id: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/hal+json' | 'text/uri-list', context?: HttpContext}): Observable<HttpResponse<EntityModelComplianceJobEntity>>;
-    public followPropertyReferenceComplianceruleconfigurationentityGet1(id: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/hal+json' | 'text/uri-list', context?: HttpContext}): Observable<HttpEvent<EntityModelComplianceJobEntity>>;
-    public followPropertyReferenceComplianceruleconfigurationentityGet1(id: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/hal+json' | 'text/uri-list', context?: HttpContext}): Observable<any> {
-        if (id === null || id === undefined) {
-            throw new Error('Required parameter id was null or undefined when calling followPropertyReferenceComplianceruleconfigurationentityGet1.');
-        }
-
-        let localVarHeaders = this.defaultHeaders;
-
-        let localVarHttpHeaderAcceptSelected: string | undefined = options && options.httpHeaderAccept;
-        if (localVarHttpHeaderAcceptSelected === undefined) {
-            // to determine the Accept header
-            const httpHeaderAccepts: string[] = [
-                'application/hal+json',
-                'text/uri-list'
-            ];
-            localVarHttpHeaderAcceptSelected = this.configuration.selectHeaderAccept(httpHeaderAccepts);
-        }
-        if (localVarHttpHeaderAcceptSelected !== undefined) {
-            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
-        }
-
-        let localVarHttpContext: HttpContext | undefined = options && options.context;
-        if (localVarHttpContext === undefined) {
-            localVarHttpContext = new HttpContext();
-        }
-
-
-        let responseType_: 'text' | 'json' | 'blob' = 'json';
-        if (localVarHttpHeaderAcceptSelected) {
-            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
-                responseType_ = 'text';
-            } else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
-                responseType_ = 'json';
-            } else {
-                responseType_ = 'blob';
-            }
-        }
-
-        let localVarPath = `/compliance-rule-configurations/${this.configuration.encodeParam({name: "id", value: id, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined})}/complianceJob`;
-        return this.httpClient.request<EntityModelComplianceJobEntity>('get', `${this.configuration.basePath}${localVarPath}`,
-            {
-                context: localVarHttpContext,
-                responseType: <any>responseType_,
-                withCredentials: this.configuration.withCredentials,
-                headers: localVarHeaders,
-                observe: observe,
-                reportProgress: reportProgress
-            }
-        );
-    }
-
-    /**
      * get-complianceruleentity-by-complianceruleconfigurationentity-Id
      * @param id 
      * @param propertyId 
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public followPropertyReferenceComplianceruleconfigurationentityGet2(id: string, propertyId: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/hal+json', context?: HttpContext}): Observable<EntityModelComplianceRuleEntity>;
-    public followPropertyReferenceComplianceruleconfigurationentityGet2(id: string, propertyId: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/hal+json', context?: HttpContext}): Observable<HttpResponse<EntityModelComplianceRuleEntity>>;
-    public followPropertyReferenceComplianceruleconfigurationentityGet2(id: string, propertyId: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/hal+json', context?: HttpContext}): Observable<HttpEvent<EntityModelComplianceRuleEntity>>;
-    public followPropertyReferenceComplianceruleconfigurationentityGet2(id: string, propertyId: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/hal+json', context?: HttpContext}): Observable<any> {
+    public followPropertyReferenceComplianceruleconfigurationentityGet(id: string, propertyId: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/hal+json', context?: HttpContext}): Observable<EntityModelComplianceRuleEntity>;
+    public followPropertyReferenceComplianceruleconfigurationentityGet(id: string, propertyId: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/hal+json', context?: HttpContext}): Observable<HttpResponse<EntityModelComplianceRuleEntity>>;
+    public followPropertyReferenceComplianceruleconfigurationentityGet(id: string, propertyId: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/hal+json', context?: HttpContext}): Observable<HttpEvent<EntityModelComplianceRuleEntity>>;
+    public followPropertyReferenceComplianceruleconfigurationentityGet(id: string, propertyId: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/hal+json', context?: HttpContext}): Observable<any> {
         if (id === null || id === undefined) {
-            throw new Error('Required parameter id was null or undefined when calling followPropertyReferenceComplianceruleconfigurationentityGet2.');
+            throw new Error('Required parameter id was null or undefined when calling followPropertyReferenceComplianceruleconfigurationentityGet.');
         }
         if (propertyId === null || propertyId === undefined) {
-            throw new Error('Required parameter propertyId was null or undefined when calling followPropertyReferenceComplianceruleconfigurationentityGet2.');
+            throw new Error('Required parameter propertyId was null or undefined when calling followPropertyReferenceComplianceruleconfigurationentityGet.');
         }
 
         let localVarHeaders = this.defaultHeaders;
@@ -1147,12 +758,12 @@ export class ComplianceRuleConfigurationService {
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public followPropertyReferenceComplianceruleconfigurationentityGet21(id: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/hal+json' | 'text/uri-list', context?: HttpContext}): Observable<EntityModelComplianceRuleEntity>;
-    public followPropertyReferenceComplianceruleconfigurationentityGet21(id: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/hal+json' | 'text/uri-list', context?: HttpContext}): Observable<HttpResponse<EntityModelComplianceRuleEntity>>;
-    public followPropertyReferenceComplianceruleconfigurationentityGet21(id: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/hal+json' | 'text/uri-list', context?: HttpContext}): Observable<HttpEvent<EntityModelComplianceRuleEntity>>;
-    public followPropertyReferenceComplianceruleconfigurationentityGet21(id: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/hal+json' | 'text/uri-list', context?: HttpContext}): Observable<any> {
+    public followPropertyReferenceComplianceruleconfigurationentityGet1(id: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/hal+json' | 'text/uri-list', context?: HttpContext}): Observable<EntityModelComplianceRuleEntity>;
+    public followPropertyReferenceComplianceruleconfigurationentityGet1(id: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/hal+json' | 'text/uri-list', context?: HttpContext}): Observable<HttpResponse<EntityModelComplianceRuleEntity>>;
+    public followPropertyReferenceComplianceruleconfigurationentityGet1(id: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/hal+json' | 'text/uri-list', context?: HttpContext}): Observable<HttpEvent<EntityModelComplianceRuleEntity>>;
+    public followPropertyReferenceComplianceruleconfigurationentityGet1(id: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/hal+json' | 'text/uri-list', context?: HttpContext}): Observable<any> {
         if (id === null || id === undefined) {
-            throw new Error('Required parameter id was null or undefined when calling followPropertyReferenceComplianceruleconfigurationentityGet21.');
+            throw new Error('Required parameter id was null or undefined when calling followPropertyReferenceComplianceruleconfigurationentityGet1.');
         }
 
         let localVarHeaders = this.defaultHeaders;
@@ -1207,15 +818,15 @@ export class ComplianceRuleConfigurationService {
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public followPropertyReferenceComplianceruleconfigurationentityGet3(id: string, propertyId: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/hal+json', context?: HttpContext}): Observable<CollectionModelComplianceRuleParameterAssignmentEntity>;
-    public followPropertyReferenceComplianceruleconfigurationentityGet3(id: string, propertyId: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/hal+json', context?: HttpContext}): Observable<HttpResponse<CollectionModelComplianceRuleParameterAssignmentEntity>>;
-    public followPropertyReferenceComplianceruleconfigurationentityGet3(id: string, propertyId: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/hal+json', context?: HttpContext}): Observable<HttpEvent<CollectionModelComplianceRuleParameterAssignmentEntity>>;
-    public followPropertyReferenceComplianceruleconfigurationentityGet3(id: string, propertyId: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/hal+json', context?: HttpContext}): Observable<any> {
+    public followPropertyReferenceComplianceruleconfigurationentityGet2(id: string, propertyId: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/hal+json', context?: HttpContext}): Observable<CollectionModelComplianceRuleParameterAssignmentEntity>;
+    public followPropertyReferenceComplianceruleconfigurationentityGet2(id: string, propertyId: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/hal+json', context?: HttpContext}): Observable<HttpResponse<CollectionModelComplianceRuleParameterAssignmentEntity>>;
+    public followPropertyReferenceComplianceruleconfigurationentityGet2(id: string, propertyId: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/hal+json', context?: HttpContext}): Observable<HttpEvent<CollectionModelComplianceRuleParameterAssignmentEntity>>;
+    public followPropertyReferenceComplianceruleconfigurationentityGet2(id: string, propertyId: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/hal+json', context?: HttpContext}): Observable<any> {
         if (id === null || id === undefined) {
-            throw new Error('Required parameter id was null or undefined when calling followPropertyReferenceComplianceruleconfigurationentityGet3.');
+            throw new Error('Required parameter id was null or undefined when calling followPropertyReferenceComplianceruleconfigurationentityGet2.');
         }
         if (propertyId === null || propertyId === undefined) {
-            throw new Error('Required parameter propertyId was null or undefined when calling followPropertyReferenceComplianceruleconfigurationentityGet3.');
+            throw new Error('Required parameter propertyId was null or undefined when calling followPropertyReferenceComplianceruleconfigurationentityGet2.');
         }
 
         let localVarHeaders = this.defaultHeaders;
@@ -1268,12 +879,12 @@ export class ComplianceRuleConfigurationService {
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public followPropertyReferenceComplianceruleconfigurationentityGet31(id: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/hal+json' | 'text/uri-list', context?: HttpContext}): Observable<CollectionModelComplianceRuleParameterAssignmentEntity>;
-    public followPropertyReferenceComplianceruleconfigurationentityGet31(id: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/hal+json' | 'text/uri-list', context?: HttpContext}): Observable<HttpResponse<CollectionModelComplianceRuleParameterAssignmentEntity>>;
-    public followPropertyReferenceComplianceruleconfigurationentityGet31(id: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/hal+json' | 'text/uri-list', context?: HttpContext}): Observable<HttpEvent<CollectionModelComplianceRuleParameterAssignmentEntity>>;
-    public followPropertyReferenceComplianceruleconfigurationentityGet31(id: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/hal+json' | 'text/uri-list', context?: HttpContext}): Observable<any> {
+    public followPropertyReferenceComplianceruleconfigurationentityGet21(id: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/hal+json' | 'text/uri-list', context?: HttpContext}): Observable<CollectionModelComplianceRuleParameterAssignmentEntity>;
+    public followPropertyReferenceComplianceruleconfigurationentityGet21(id: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/hal+json' | 'text/uri-list', context?: HttpContext}): Observable<HttpResponse<CollectionModelComplianceRuleParameterAssignmentEntity>>;
+    public followPropertyReferenceComplianceruleconfigurationentityGet21(id: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/hal+json' | 'text/uri-list', context?: HttpContext}): Observable<HttpEvent<CollectionModelComplianceRuleParameterAssignmentEntity>>;
+    public followPropertyReferenceComplianceruleconfigurationentityGet21(id: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/hal+json' | 'text/uri-list', context?: HttpContext}): Observable<any> {
         if (id === null || id === undefined) {
-            throw new Error('Required parameter id was null or undefined when calling followPropertyReferenceComplianceruleconfigurationentityGet31.');
+            throw new Error('Required parameter id was null or undefined when calling followPropertyReferenceComplianceruleconfigurationentityGet21.');
         }
 
         let localVarHeaders = this.defaultHeaders;

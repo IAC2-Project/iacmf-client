@@ -11,7 +11,6 @@
  */
 import { ComplianceIssueEntity } from './complianceIssueEntity';
 import { PluginUsageInstanceEntity } from './pluginUsageInstanceEntity';
-import { ComplianceJobEntity } from './complianceJobEntity';
 
 
 export interface ExecutionEntity { 
@@ -23,7 +22,6 @@ export interface ExecutionEntity {
     instanceModel?: string;
     violationsDetected?: boolean;
     description?: string;
-    complianceJob?: ComplianceJobEntity;
     pluginUsageInstances?: Array<PluginUsageInstanceEntity>;
     complianceIssueEntities?: Array<ComplianceIssueEntity>;
 }
