@@ -1,5 +1,5 @@
-/**
-!openapitools.json
-!README.md
+*
 !.gitignore
+!openapitools.json
+!api-docs.json
 !.openapi-generator-ignore
