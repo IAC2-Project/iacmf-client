@@ -3,3 +3,4 @@
 !openapitools.json
 !api-docs.json
 !.openapi-generator-ignore
+!README.md
