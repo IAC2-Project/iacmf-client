@@ -11,7 +11,8 @@
         "additionalProperties": {
           "ngVersion": "14.0.5",
           "disallowAdditionalPropertiesIfNotPresent": "false",
-          "npmName": "iacmf-client"
+          "npmName": "iacmf-client",
+          "npmVersion": "1.0.1"
 
         }
       }
