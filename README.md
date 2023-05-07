@@ -9,6 +9,7 @@ To update the client do the following:
 - copy the contents of the generated files and replace the contents of the file `api-docs.json` with them.
 - update the version of the library in the file `openapitools.json`.
 - run the command `npx @openapitools/openapi-generator-cli generate`.
+- (optional) update the license and git repo information in the `package.json` file.
 - run the command `npm install`.
 - run the command `npm run build`.
 - run the command `npm login` to login to your npm repository.
