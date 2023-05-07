@@ -5,7 +5,7 @@
   "author": "OpenAPI-Generator Contributors",
   "repository": {
     "type": "git",
-    "url": "https://github.com/GIT_USER_ID/GIT_REPO_ID.git"
+    "url": "https://github.com/IAC2-Project/iacmf-client.git"
   },
   "keywords": [
     "openapi-client",
@@ -13,8 +13,8 @@
   ],
   "license": "Unlicense",
   "scripts": {
-    "build": "ng-packagr -p ng-package.json",
-	"install": "npm run build"
+    "install": "npm run build",
+    "build": "ng-packagr -p ng-package.json"
   },
   "peerDependencies": {
     "@angular/core": "^14.0.5",
